@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio - Information</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: rgb(253, 181, 193);
+    --background: pink ;
+    --text-color: #000000;
+    --accent-color: #95a5a6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif; /* Changed font style to Playfair Display */
+    background: linear-gradient(135deg, #FFD6A5 0%, #FFB6C1 100%); /* Soft and easy to see gradient for background */
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh; /* Added for responsive design */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--background); /* Soft and easy to see color for navbar background */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-links {
+    display: inline-block; /* Changed to display navigation links normally */
+    gap: 2rem; /* Added gap between navigation links */
+}
+
+.nav-links a {
+    color: var(--text-color); /* Adjust text color for navigation links */
+    text-decoration: none; /* Removed underline from navigation links */
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+    display: block; /* Adjust hover color for navigation links */
+}
+
+.dropbtn {
+    background-color: var(--background);
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--background-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-links:hover .dropdown-content {
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 2rem;
+}
+
+.info-section {
+    background: var(--background-color); /* Soft and easy to see color for info section background */
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color); /* Soft and easy to see color for section title */
+}
+
+.section-title i {
+    font-size: 1.5rem;
+}
+
+.bio-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Changed to swap the order of columns */
+    gap: 2rem;
+    align-items: start;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 20px; /* Changed to a rectangular shape with rounded corners */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 8px solid var(--background-color); /* Soft and easy to see color for profile image border */
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.interest-card {
+    background: var(--background-color); /* Soft and easy to see color for interest card background */
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .bio-content {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Adjusted navigation links to stack vertically on smaller screens */
+    }
+
+    .nav-links a {
+        padding: 1rem; /* Added padding for navigation links on smaller screens */
+    }
+
+    .container {
+        padding: 0 1rem; /* Adjusted for smaller screens */
+    }
+
+    .info-section {
+        padding: 1rem; /* Adjusted for smaller screens */
+    }
+
+    .section-title {
+        margin-bottom: 1rem; /* Adjusted for smaller screens */
+    }
+
+    .profile-image {
+        max-width: 200px; /* Adjusted for smaller screens */
+    }
+
+    .interests-grid {
+        gap: 1rem; /* Adjusted for smaller screens */
+    }
+
+    .interest-card {
+        padding: 1rem; /* Adjusted for smaller screens */
+    }
+}
+
+@media (min-width: 320px) {
+    /* Additional styles for minimum width of 320px */
+    .container {
+        padding: 1rem; /* Adjusted for minimum width */
+    }
+
+    .info-section {
+        padding: 1.5rem; /* Adjusted for minimum width */
+    }
+
+    .section-title {
+        margin-bottom: 1.5rem; /* Adjusted for minimum width */
+    }
+
+    .profile-image {
+        max-width: 250px; /* Adjusted for minimum width */
+    }
+
+    .interests-grid {
+        gap: 1.5rem; /* Adjusted for minimum width */
+    }
+
+    .interest-card {
+        padding: 1.5rem; /* Adjusted for minimum width */
+    }
+}
+
+    </style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>Portfolio</h2>
+            </div>
+            <div class="nav-links">
+                <button onclick="myFunction()" class="dropbtn">Menu</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="info.html">Information</a>
+                    <a href="Skill.html">Skill</a>
+                    <a href="Work.html">Work Experience</a>
+                    <a href="Contact.html">Contact content</a>
+                    <a href="game.html">Game</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <section class="info-section">
+            <div class="section-title">
+                <i class="fas fa-user"></i>
+                <h2>About Me</h2>
+            </div>
+            <div class="bio-contet">
+                <div class="bio-text">
+                    <p>Hi there! I am LWIN MAY THU known as May Thu. I am a 20-year-old Burmese student. I am a Business graduate and first-year Data Science student at Saigon Business School, Ho Chi Minh. 
+                        Fluent in English and Burmese. I have blended of business knowledge with analytical skills. 
+                        Passionate about partnership engagement, market research, and data analysing. I am driven, adaptable, and excited to learn. 
+                        Ready to make an impact while growing through teamwork and hands-on experience. </p>
+                </div>
+                <img src="../Image/me.jpg" alt="Profile Picture" class="profile-image">
+            </div>
+        </section>
+
+        <!--Other Sections (Education, Interests,etc.)-->
+        <section class="info-section">
+            <div class="section-title">
+                <i class="fas fa-graduation-cap"></i>
+                <h2>Education</h2>
+            </div>
+            <div class="education-content">
+                <p> Saigon Business School-SBS (2024 July- Present)</p>
+                <p> Major: Data Science</p>
+                <p> University of Hertfordshire (2023- 2024 April)</p>
+                <p> Major: Bachelor of Business Adminstritaion</p>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="section-title">
+                <i class="fas fa-heart"></i>
+                <h2>Interests & Hobbies</h2>
+            </div>
+            <div class="interest-grid">
+                <!--Cards for interests-->
+                <div class="interest-card">
+                    <h3>Business and Data Analysing</h3>
+                    <p> Data Analysing and Business Enterpreneurship</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+          }
+          
+          // Close the dropdown if the user clicks outside of it
+          window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+              var dropdowns = document.getElementsByClassName("dropdown-content");
+              var i;
+              for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                  openDropdown.classList.remove('show');
+                }
+              }
+            }
+          }
+    </script>
+</body>
+</html>
